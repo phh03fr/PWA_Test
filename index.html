@@ -51,6 +51,18 @@
     window.addEventListener('online', updateNetworkStatus);
     window.addEventListener('offline', updateNetworkStatus);
   </script>
+
+  <p>Dernière mise à jour : <span id="file-date"></span></p>
+
+<script>
+  const lastMod = new Date(document.lastModified);
+  
+  // Formatage lisible en français
+  document.getElementById('file-date').textContent = lastMod.toLocaleString('fr-FR', {
+    dateStyle: 'short',
+    timeStyle: 'medium'
+  });
+</script>
   
 </body>
 </html>
