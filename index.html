@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PWA Demo</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    .badge {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: white;
+    }
+    .online { background-color: #22c55e; }  /* Vert */
+    .offline { background-color: #ef4444; } /* Rouge */
+  </style>
 </head>
 <body>
   <h1>Ma PWA Minimaliste</h1>
@@ -15,5 +27,30 @@
       navigator.serviceWorker.register('/PWA_Test/sw.js', { scope: '/PWA_Test/' });
     }
   </script>
+
+<!-- Indicateur visuel du Statut Réseau-->
+  <span id="network-status" class="badge">Vérification...</span>
+
+  <script>
+    const statusBadge = document.getElementById('network-status');
+
+    function updateNetworkStatus() {
+      if (navigator.onLine) {
+        statusBadge.textContent = '● En ligne (Live)';
+        statusBadge.className = 'badge online';
+      } else {
+        statusBadge.textContent = '● Hors ligne (Mode cache)';
+        statusBadge.className = 'badge offline';
+      }
+    }
+
+    // 1. Détection initiale au chargement de la page
+    updateNetworkStatus();
+
+    // 2. Écoute des changements d'état du réseau en temps réel
+    window.addEventListener('online', updateNetworkStatus);
+    window.addEventListener('offline', updateNetworkStatus);
+  </script>
+  
 </body>
 </html>
