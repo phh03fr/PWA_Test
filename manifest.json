@@ -1,7 +1,7 @@
 {
   "name": "PWA Minimaliste",
   "short_name": "PWA",
-  "start_url": "/PWA_Test",
+  "start_url": "/PWA_Test/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
