@@ -7,13 +7,13 @@ baseurl: "/PWA_Test"
 # Le menu est centralisé ici : ajoutez une entrée pour créer un nouveau lien.
 navigation:
   - title: Accueil
-    url: /
+    url: ./
   - title: Services
-    url: /services/
+    url: ./services/
   - title: À propos
-    url: /a-propos/
+    url: ./a-propos/
   - title: Contact
-    url: /contact/
+    url: ./contact/
 
 exclude:
   - README.md
