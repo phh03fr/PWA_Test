@@ -13,7 +13,9 @@ navigation:
   - title: À propos
     url: /a-propos/
   - title: Contact
-    url: /contact/
+    url: /contact/  
+  - title: Documentation
+    url: /docs/
 
 exclude:
   - README.md
