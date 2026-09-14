@@ -1,3 +1,19 @@
-	<header>
-		     Le Header de mon Site (from _includes/header.html)
-	</header>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+    <nav aria-label="Navigation principale">
+      <ul class="nav-list">
+        {% for item in site.navigation %}
+          {% assign item_url = item.url | relative_url %}
+          <li>
+            <a href="{{ item_url }}"
+               {% if page.url == item.url %}class="active" aria-current="page"{% endif %}>
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
