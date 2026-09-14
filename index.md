@@ -24,7 +24,7 @@ permalink: /
     </article>
     <article class="card">
       <h3>Facile à publier</h3>
-      <p>Un push sur GitHub suffit après activation de GitHub Pages.</p>
+      <p>Un push sur GitHub suffit après activation de GitHub Pages...</p>
     </article>
   </div>
 </section>
